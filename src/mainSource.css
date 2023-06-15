@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* This is for LI */
+
+li {
+  list-style-type: none;
+}
+
+/* For the body */
+
+body {
+  background-color: #424245;
+}
+
+/* Buttons */
+
+button {
+  width: 200px;
+  height: 70px;
+  background-color: #424245;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
