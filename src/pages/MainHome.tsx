@@ -2,7 +2,7 @@ import { Header } from "../components/Header";
 import { Contact } from "../components/Contact";
 import { ContactTwo } from "../components/ContactTwo";
 import { ContactThree } from "../components/ContactThree";
-// import { Home } from "../components/Home";
+import { Home } from "../components/Home";
 import { Footer } from "../components/Footer";
 
 export function MainHome() {
@@ -12,7 +12,7 @@ export function MainHome() {
       <Contact />
       <ContactTwo />
       <ContactThree />
-      {/* <Home /> */}
+      <Home />
       <Footer />
     </div>
   );
