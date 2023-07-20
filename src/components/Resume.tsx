@@ -1,6 +1,3 @@
-import React from "react";
-import { PDFViewer, Document, Page } from "@react-pdf/renderer";
-
 const Resume = () => {
   return (
     <embed

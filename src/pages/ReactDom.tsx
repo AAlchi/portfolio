@@ -1,4 +1,3 @@
-import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { MainHome } from "./MainHome";
 import Resume from "../components/Resume";
