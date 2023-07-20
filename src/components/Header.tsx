@@ -1,40 +1,86 @@
+import { useState } from "react";
+
 export const Header = () => {
-  function view() {}
+  const [contactOpen, setContactOpen] = useState(false);
+
+  if (contactOpen) {
+    window.scrollTo(0, 0);
+  }
+
+  function view() {
+    const recipientEmail = "alialchi07+portfolio@gmail.com";
+    const subject = "Subject";
+    const body = "Content";
+
+    const mail = `mailto:${recipientEmail}?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+
+    // Open the desktop email client
+    window.location.href = mail;
+  }
   return (
     <>
-      <div
-        style={{
-          position: "absolute",
-          width: "60%",
-          minWidth: "400px",
-          height: "400px",
-          backgroundColor: "darkgray",
-          zIndex: "2",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
-          borderRadius: "5px",
-          display: "flex",
-          flexDirection: "column",
-        }}
-      >
+      {contactOpen && (
         <div
           style={{
+            position: "absolute",
+            width: "60%",
+            minWidth: "400px",
+            height: "400px",
+            backgroundColor: "darkgray",
+            zIndex: "2",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            borderRadius: "5px",
             display: "flex",
-            justifyContent: "space-evenly",
-            backgroundColor: "gray",
-            alignItems: "center",
-            padding: "10px",
+            flexDirection: "column",
           }}
         >
-          <h2>Viewing Contact</h2>
-          <button>Close</button>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-evenly",
+              backgroundColor: "gray",
+              alignItems: "center",
+              padding: "10px",
+            }}
+          >
+            <h2 style={{ color: "white" }}>Viewing Contact</h2>
+            <button
+              onClick={() => {
+                setContactOpen(false);
+              }}
+            >
+              Close
+            </button>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "20px",
+              padding: "5%",
+            }}
+          >
+            <h2 onClick={view}>
+              Email:{" "}
+              <span
+                style={{
+                  color: "blue",
+                  textDecoration: "underline",
+                  cursor: "pointer",
+                }}
+              >
+                {" "}
+                alialchi07+portfolio@gmail.com
+              </span>
+            </h2>
+            <h2>Phone: (312)-799-1224</h2>
+          </div>
         </div>
-        <div>
-          <h2>Email: alialchi07+portfolio@gmail.com</h2>
-          <h2>Phone: (312)-799-1224</h2>
-        </div>
-      </div>
+      )}
       <header
         style={{
           display: "flex",
@@ -59,8 +105,8 @@ export const Header = () => {
             gap: "10px",
           }}
         >
-          <li onClick={() => view()}>View Phone</li>
-          <li onClick={() => view()}>View Email</li>
+          <li onClick={() => setContactOpen(true)}>View Phone</li>
+          <li onClick={() => setContactOpen(true)}>View Email</li>
         </ul>
       </header>
     </>

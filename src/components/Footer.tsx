@@ -1,4 +1,20 @@
+import { useNavigate } from "react-router-dom";
+
 export const Footer = () => {
+  const navigate = useNavigate();
+
+  const sendMail = () => {
+    const recipientEmail = "alialchi07+portfolio@gmail.com";
+    const subject = "Subject";
+    const body = "Content";
+
+    const mail = `mailto:${recipientEmail}?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+
+    // Open the desktop email client
+    window.location.href = mail;
+  };
   return (
     <div
       style={{
@@ -25,7 +41,7 @@ export const Footer = () => {
           padding: "5%",
         }}
       >
-        <div style={{ fontSize: "2.2rem" }}>Links:</div>
+        <div style={{ fontSize: "2.2rem" }}>More:</div>
         <ul
           style={{
             display: "flex",
@@ -36,12 +52,22 @@ export const Footer = () => {
             fontSize: "15px",
           }}
         >
-          <li>Back To Top</li>
-          <li>Resume</li>
-          <li>Portfolio</li>
-          <li>I am open for freelance.</li>
-          <li>Gmail: alialchi07@gmail.com</li>
+          <li onClick={() => navigate("/resume")}>Resume</li>
+          <li>
+            Gmail:{" "}
+            <span
+              style={{
+                color: "white",
+                textDecoration: "underline",
+                cursor: "pointer",
+              }}
+              onClick={sendMail}
+            >
+              alialchi07+portfolio@gmail.com
+            </span>
+          </li>
           <li>Phone: (312)-799-1224</li>
+          <li>I am open for freelance.</li>
         </ul>
         <p style={{ fontSize: "20px", padding: "50px" }}>
           &copy; 2023 Ali A. Ibrahim
@@ -58,8 +84,7 @@ export const Footer = () => {
           gap: "10px",
         }}
       >
-        <button>Contact</button>
-        <button>Back To Top</button>
+        <button onClick={() => window.scrollTo(0, 0)}>Back To Top</button>
       </div>
     </div>
   );

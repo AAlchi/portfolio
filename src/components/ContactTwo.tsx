@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 export const ContactTwo = () => {
+  const navigate = useNavigate();
   return (
     <div
       style={{
@@ -39,8 +42,7 @@ export const ContactTwo = () => {
           gap: "10px",
         }}
       >
-        <button>View Resume</button>
-        <button>View Contact</button>
+        <button onClick={() => navigate("/resume")}>View Resume</button>
       </div>
     </div>
   );

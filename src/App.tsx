@@ -1,7 +1,7 @@
-import { MainHome } from "./pages/MainHome";
+import ReactDom from "./pages/ReactDom";
 
 function App() {
-  return <MainHome />;
+  return <ReactDom />;
 }
 
 export default App;

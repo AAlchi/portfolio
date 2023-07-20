@@ -14,7 +14,7 @@ export const Home = () => {
         padding: "10%",
       }}
     >
-      <h1>Featured Projects</h1>
+      <h1>Projects</h1>
 
       {dataProjects.projects.map((data) => (
         <div

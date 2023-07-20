@@ -1,4 +1,16 @@
 export const ContactThree = () => {
+  const sendMail = () => {
+    const recipientEmail = "alialchi07+portfolio@gmail.com";
+    const subject = "Subject";
+    const body = "Content";
+
+    const mail = `mailto:${recipientEmail}?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+
+    // Open the desktop email client
+    window.location.href = mail;
+  };
   return (
     <div
       style={{
@@ -46,7 +58,16 @@ export const ContactThree = () => {
           }}
         >
           <h5>Email: </h5>
-          <h5>{"alialchi07@gmail.com"}</h5>
+          <h5
+            style={{
+              cursor: "pointer",
+              textDecoration: "underline",
+              color: "lightblue",
+            }}
+            onClick={sendMail}
+          >
+            {"alialchi07@gmail.com"}
+          </h5>
         </div>
       </div>
       <div
