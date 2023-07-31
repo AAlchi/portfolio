@@ -8,7 +8,6 @@ export const ContactThree = () => {
       subject
     )}&body=${encodeURIComponent(body)}`;
 
-    // Open the desktop email client
     window.location.href = mail;
   };
   return (

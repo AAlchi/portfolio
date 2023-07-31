@@ -3,18 +3,6 @@ import { useNavigate } from "react-router-dom";
 export const Footer = () => {
   const navigate = useNavigate();
 
-  const sendMail = () => {
-    const recipientEmail = "alialchi07+portfolio@gmail.com";
-    const subject = "Subject";
-    const body = "Content";
-
-    const mail = `mailto:${recipientEmail}?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(body)}`;
-
-    // Open the desktop email client
-    window.location.href = mail;
-  };
   return (
     <div
       style={{
@@ -53,20 +41,7 @@ export const Footer = () => {
           }}
         >
           <li onClick={() => navigate("/resume")}>Resume</li>
-          <li>
-            Gmail:{" "}
-            <span
-              style={{
-                color: "white",
-                textDecoration: "underline",
-                cursor: "pointer",
-              }}
-              onClick={sendMail}
-            >
-              alialchi07+portfolio@gmail.com
-            </span>
-          </li>
-          <li>Phone: (312)-799-1224</li>
+
           <li>I am open for freelance.</li>
         </ul>
         <p style={{ fontSize: "20px", padding: "50px" }}>

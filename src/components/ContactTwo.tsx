@@ -26,10 +26,10 @@ export const ContactTwo = () => {
           padding: "5%",
         }}
       >
-        <div style={{ fontSize: "3.2rem" }}>"</div>A 15 year old with an
-        emphasis for technology. Hard working, problem solver, and social. Has 3
-        years of experience with programming and his career path.
-        <div style={{ fontSize: "3.2rem" }}>"</div>
+        <div style={{ fontSize: "3.2rem" }}></div>Passion for technology at 15
+        years old. With over 3 years of experience. Has the desire to go into
+        Artificial Intelligence.
+        <div style={{ fontSize: "3.2rem" }}></div>
       </h1>
       <div
         style={{

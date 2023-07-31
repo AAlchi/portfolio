@@ -28,15 +28,15 @@ export const Contact = () => {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          marginTop: "75px",
+          marginTop: "90px",
         }}
       >
         <h1
           style={{
             color: "white",
             textAlign: "center",
-            fontSize: "3.2rem",
-            padding: "10px",
+            fontSize: "3rem",
+            padding: "5px",
           }}
         >
           Ali A. Ibrahim
@@ -45,11 +45,11 @@ export const Contact = () => {
           style={{
             color: "white",
             textAlign: "center",
-            fontSize: "2rem",
-            padding: "10px",
+            fontSize: "1.5rem",
+            padding: "5px",
           }}
         >
-          Software Engineer and Artificial Intelligence
+          Software Engineer & Artificial Intelligence
         </h2>
       </div>
     </div>

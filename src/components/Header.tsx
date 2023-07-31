@@ -16,7 +16,6 @@ export const Header = () => {
       subject
     )}&body=${encodeURIComponent(body)}`;
 
-    // Open the desktop email client
     window.location.href = mail;
   }
   return (
@@ -96,9 +95,12 @@ export const Header = () => {
           gap: "18px",
           position: "sticky",
           top: 0,
+          zIndex: "50",
         }}
       >
-        <h2>Ali A. Ibrahim</h2>
+        <h2 className="text-white" style={{ opacity: "1" }}>
+          Ali A. Ibrahim
+        </h2>
         <ul
           style={{
             display: "flex",
