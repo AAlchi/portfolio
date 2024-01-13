@@ -1,0 +1,11 @@
+{
+  "hosting": {  
+    "site": "alialchi",
+    "public": "aliai",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
