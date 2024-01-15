@@ -4,6 +4,7 @@ export const ContactTwo = () => {
   const navigate = useNavigate();
   return (
     <div
+      id="resume"
       style={{
         backgroundColor: "#DBD9E4",
         backgroundSize: "cover",
@@ -26,7 +27,7 @@ export const ContactTwo = () => {
           padding: "5%",
         }}
       >
-        <div style={{ fontSize: "3rem" }}></div>        Software engineer with 3+ years of experience developing, maintaining, and improving applications/websites. Proven ability to design, develop, and test scalable and reliable software. With expertise in frontend (HTML, JS, CSS) and backend development (PHP, NodeJS) along with cloud computing (AWS, MongoDB). Speaking a role in a fast-paced environment while delivering quality work.
+        <div style={{ fontSize: "3rem" }}></div>        Software engineer with 4+ years of experience developing, maintaining, and improving applications/websites. Proven ability to design, develop, and test scalable and reliable software. With expertise in frontend (HTML, JS, CSS) and backend development (PHP, NodeJS) along with cloud computing (AWS, MongoDB). Speaking a role in a fast-paced environment while delivering quality work.
 
         <div style={{ fontSize: "3rem" }}></div>
       </h1>

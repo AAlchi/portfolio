@@ -12,6 +12,7 @@ export const ContactThree = () => {
   };
   return (
     <div
+      id="contact"
       style={{
         backgroundColor: "#DBD9E4",
         backgroundSize: "cover",

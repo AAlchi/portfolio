@@ -3,15 +3,16 @@ import { Contact } from "../components/Contact";
 import { ContactThree } from "../components/ContactThree";
 import { Home } from "../components/Home";
 import { Footer } from "../components/Footer";
-import { ContactTwo } from "../components/ContactTwo";
+import { ContactTwo } from "../components/ContactTwo"; 
 
 export function MainHome() {
+   
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
-      <Header />
+      <Header /> 
       <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-        <Contact />
-        <Home />
+        <Contact /> 
+        <Home /> 
         <ContactTwo />
         <ContactThree />
       </div>

@@ -2,7 +2,7 @@
 export const Contact = () => {
  
   return (
-    <div style={{backgroundColor: "rgb(0, 0, 0, 0.7)"}}> 
+    <div id="main" style={{backgroundColor: "rgb(0, 0, 0, 0.7)"}}> 
       <div
         style={{
           position: "relative",

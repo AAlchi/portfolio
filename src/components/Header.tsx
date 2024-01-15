@@ -1,63 +1,20 @@
-import { useState } from "react";
-
+ 
 export const Header = () => {
-  const [contactOpen, setContactOpen] = useState(false);
+ 
+  function goTo(arg: String) {
+    const theScroll = document.getElementById(arg as string) 
 
-  if (contactOpen) {
-    window.scrollTo(0, 0);
+
+    theScroll?.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    })
   }
 
-   
   return (
-    <>
-      {contactOpen && (
-        <div
-          style={{
-            position: "absolute",
-            width: "60%",
-            minWidth: "400px",
-            height: "400px",
-            backgroundColor: "darkgray",
-            zIndex: "2",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            borderRadius: "5px",
-            display: "flex",
-            flexDirection: "column",
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-evenly",
-              backgroundColor: "gray",
-              alignItems: "center",
-              padding: "10px",
-            }}
-          >
-            <h2 style={{ color: "white" }}>Viewing Contact</h2>
-            <button
-              onClick={() => {
-                setContactOpen(false);
-              }}
-            >
-              Close
-            </button>
-          </div>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "20px",
-              padding: "5%",
-            }}
-          >
-             
-          </div>
-        </div>
-      )}
-      <header
+    <> 
+      <header 
+        id="header"
         style={{
           display: "flex",
           backgroundColor: "#2E2E33",
@@ -71,7 +28,7 @@ export const Header = () => {
           flexWrap: "wrap",
           gap: "18px",
           position: "sticky",
-          top: 0,
+          top: "0",
           zIndex: "50",
         }}
       >
@@ -85,6 +42,12 @@ export const Header = () => {
           }}
         > 
         </ul>
+        <ul style={{display: "flex", fontWeight: "bold", gap: "10px"}}>
+          <li onClick={() => goTo("main")}>Home</li>
+          <li onClick={() => goTo("home")}>Projects</li>
+          <li onClick={() => goTo("resume")}>Resume</li>
+          <li onClick={() => goTo("contact")}>Contact</li>
+         </ul>
       </header>
     </>
   );
