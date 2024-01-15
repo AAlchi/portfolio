@@ -4,19 +4,22 @@ import { ContactThree } from "../components/ContactThree";
 import { Home } from "../components/Home";
 import { Footer } from "../components/Footer";
 import { ContactTwo } from "../components/ContactTwo"; 
+import "../input.css";
 
 export function MainHome() {
    
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
       <Header /> 
+
       <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
         <Contact /> 
-        <Home /> 
+        <Home />
         <ContactTwo />
         <ContactThree />
       </div>
       <Footer /> 
+
     </div>
   );
 }

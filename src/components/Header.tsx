@@ -1,9 +1,11 @@
+import { useEffect, useState } from "react";
+
  
 export const Header = () => {
- 
-  function goTo(arg: String) {
-    const theScroll = document.getElementById(arg as string) 
+  const [scrollSet, setScrollSet] = useState(false)
 
+  function goTo(arg: String) { 
+    const theScroll = document.getElementById(arg as string)  
 
     theScroll?.scrollIntoView({
       behavior: "smooth",
@@ -11,28 +13,34 @@ export const Header = () => {
     })
   }
 
+  useEffect(() => { 
+    const scroll = () => {
+      if (window.scrollY > 80) {
+        setScrollSet(true)
+      } else if (window.scrollY < 80) {
+        setScrollSet(false)
+      }
+      console.log(scrollSet)
+    }
+
+    window.addEventListener("scroll", scroll)
+    
+    return () => {
+      window.addEventListener("scroll", scroll)
+    }
+  }, [])
+
   return (
-    <> 
-      <header 
+    <div className={`${scrollSet ? "setsticky" : "setabsolute"} w-full`} style={{top: "0", zIndex: "9"}}>
+       <header 
         id="header"
+        className="flex flex-wrap gap-3 items-center justify-between p-6 text-white font-bold"
         style={{
-          display: "flex",
-          backgroundColor: "#2E2E33",
-          justifyContent: "space-between",
-          alignItems: "center",
-          color: "white",
-          paddingTop: "20px",
-          paddingBottom: "20px",
-          paddingLeft: "20px",
-          paddingRight: "20px",
-          flexWrap: "wrap",
-          gap: "18px",
-          position: "sticky",
           top: "0",
-          zIndex: "50",
+          backgroundColor: "rgb(0, 0, 0, 0.7)"
         }}
       >
-        <h2 className="text-white" style={{ opacity: "1" }}>
+        <h2 className="text-white text-2xl" style={{ opacity: "1" }}>
           Ali A. Ibrahim
         </h2>
         <ul
@@ -42,13 +50,13 @@ export const Header = () => {
           }}
         > 
         </ul>
-        <ul style={{display: "flex", fontWeight: "bold", gap: "10px"}}>
+        <ul className="shouldWhatShow">
           <li onClick={() => goTo("main")}>Home</li>
           <li onClick={() => goTo("home")}>Projects</li>
           <li onClick={() => goTo("resume")}>Resume</li>
           <li onClick={() => goTo("contact")}>Contact</li>
          </ul>
       </header>
-    </>
-  );
+      </div>
+   );
 };
