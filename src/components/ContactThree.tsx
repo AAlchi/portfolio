@@ -25,7 +25,7 @@ export const ContactThree = () => {
         padding: "20px",
       }}
     >
-       <div className="w-5/6 flex flex-col gap-5 bg-white p-4" style={{borderRadius: "10px"}}>
+       <div className="w-full flex flex-col gap-5 bg-white p-5" style={{borderRadius: "10px"}}>
         <div className="flex flex-col gap-2">
         <h1 className="font-bold text-3xl">Contact</h1>
         <h2 style={{color: "gray"}} className="text-xl">I am open for freelance work. So don't hesitate to reach out!</h2>

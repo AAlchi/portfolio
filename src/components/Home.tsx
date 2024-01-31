@@ -37,7 +37,7 @@ export const Home = () => {
             className="projectCard"
           >
             <div
-              style={{ display: "flex", flexDirection: "column", gap: "10px", backgroundColor: "white", padding: "20px", borderRadius: "5px" }}
+              style={{ display: "flex", flexDirection: "column", gap: "10px", backgroundColor: "white", padding: "25px", borderRadius: "5px" }}
             >
               <h2 className="text-xl"><span className="font-bold">{data.name}</span></h2>
               <p className="projectDescription" style={{paddingTop: "5px"}}>{data.description}</p>
