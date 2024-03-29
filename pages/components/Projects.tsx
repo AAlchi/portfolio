@@ -1,5 +1,6 @@
 import { useState } from "react"; 
 import Image from "next/image";
+import Link from "next/link";
 
 interface mainProjectStructure {
   _id: string;
@@ -121,7 +122,7 @@ const Projects = () => {
     <>  
     {isOn && (
        <div id="popup" className='fixed top-0 left-0 w-full h-full flex justify-center items-center bg-gray-800 bg-opacity-50' style={{left: "50%", transform: "translateX(-50%)"}}>
-       <div className='flex flex-col w-full md:w-3/5 lg:w-3/5 bg-slate-100 p-5 mt-20 rounded' style={{height: "85vh", overflowY: "hidden"}}>
+       <div className='flex flex-col w-full md:w-3/5 lg:w-3/5 bg-slate-100 mt-20 p-5 rounded' style={{height: "85vh", overflowY: "hidden"}}>
              <div className='flex items-center justify-between'>
                  <h1 className='text-3xl mt-2 font-bold'>{nameSet}</h1>
                  <svg xmlns="http://www.w3.org/2000/svg" onClick={() => setIsOn(false)} fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6 cursor-pointer">
@@ -146,24 +147,22 @@ const Projects = () => {
         backgroundColor: "#DBD9E4",
         display: "flex",
         flexDirection: "column",
-        gap: "30px",
-        paddingLeft: "20px", 
-        paddingRight: "20px", 
-        paddingBottom: "20px", 
-        marginTop: "-20px"
+        gap: "30px", 
       }} 
+      className="p-5"
     >
       <h1 className="text-3xl font-bold">Projects</h1>
 
       {dataProject.projects.map((data) => (
         <div
           key={data.name}
-          className={`w-full shadow-2xl`}
-          style={{ display: "flex", gap: "10px", backgroundColor: "white", padding: "25px", borderRadius: "5px" }}
+          className={`w-full shadow-2xl flex-col justify-between bg-white p-10`}
+          style={{ borderRadius: "5px" }}
         >
+          <div className="flex justify-between gap-7">
           <div
-            className="w-3/5 justify-between shouldImageAppearCheck"
-            style={{ display: "flex", flexDirection: "column", gap: "10px", backgroundColor: "white", padding: "25px", borderRadius: "5px" }}
+            className="w-3/6 justify-between shouldImageAppearCheck"
+            style={{ display: "flex", flexDirection: "column", gap: "10px", backgroundColor: "white", borderRadius: "5px" }}
           >
             <div>
               <h2 className="text-2xl"><span className="font-bold">{data.name}</span></h2>
@@ -177,12 +176,7 @@ const Projects = () => {
                   </div>
                 ))}
               </ul>
-            </div>
-            <br></br>
-            <a style={{ fontSize: "20px", display: "flex", alignItems: "center", gap: "10px", cursor: "pointer" }} href={data.github}>View GitHub Repo <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style={{ width: "20px" }}>
-              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
-            </svg>
-            </a>
+            </div> 
           </div>
           <div className="w-2/5 shouldImageAppear">
             <div className="gap-4 flex flex-col items-end justify-between"> 
@@ -192,12 +186,25 @@ const Projects = () => {
                   style={{ border: "2px solid black", borderRadius: "5px" }}
                   src={data.img[0]}
                   alt="projectName"
-                /> 
-              <div className="flex gap-2 text-xl items-center mt-3 cursor-pointer" onClick={() => setName(data.name, data.img)}>View Project <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
+                />  
+            </div>
+          </div> 
+        </div>
+        <div className="flex flex-wrap w-full justify-between items-center mt-5 gap-1 md:g-0 lg:g-0">
+            <div>
+              <Link className="flex gap-2 text-xl items-center cursor-pointer text-sm md:text-md lg:text-lg" href={data.github}>
+                View GitHub Repo 
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                </svg>
+              </Link>
+            </div>
+            <div className="flex gap-2 text-xl items-center cursor-pointer text-sm md:text-md lg:text-lg" onClick={() => setName(data.name, data.img)}>
+              View Project 
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
               </svg>
-              </div>
-            </div>
+            </div> 
           </div>
         </div>
       ))}
