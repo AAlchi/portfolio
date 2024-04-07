@@ -30,26 +30,28 @@ export default function Home() {
   return (
     <div style={{ display: "flex", flexDirection: "column" }}> 
     <div id="main"></div> 
-    <Header />
-      <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-        <Main /> 
-        <div style={{zIndex: "5", 
-        backgroundColor: "#DBD9E4",
-      }}> 
+      <div style={{ display: "flex", flexDirection: "column", gap: "5px" }}>
+        <Header />
+        <Main />  
+
           <div id="skills" ref={ref} className={`${isVisible ? "animate" : ""}`} style={{opacity: 0}}>
             <Skills />
           </div>
+        <div className="absolute w-full" style={{border: "2px solid white"}}/>
+
           <div id="projects" ref={ref2} className={`${isVisible2 ? "animate" : ""}`} style={{opacity: 0}}>
             <Projects />
           </div>
+        <div className="absolute w-full" style={{border: "2px solid white"}}/>
+
           <div id="resume"> 
             <Quote />
           </div>
+        <div className="absolute w-full" style={{border: "2px solid white"}}/>
           <div id="contact">
             <Footer /> 
           </div>
-        </div>
-      </div>
+        </div> 
 
     </div>
   );

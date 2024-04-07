@@ -10,15 +10,16 @@ const Quote = () => {
       }}
       className="flex flex-col p-5"
     >
+      <h1 className="text-3xl font-bold pt-3">About</h1>
+
       <h1
         style={{ 
           boxShadow: "0px 0px 15px 0px black", 
         }}
-        className="text-white bg-black text-center items-center flex flex-col text-lg px-10 pt-10 pb-4"
+        className="text-white font-bold bg-black text-center items-center flex flex-col text-lg px-10 pt-10 pb-4"
       >
-        <div style={{ fontSize: "3rem" }}></div>        Software engineer with 4+ years of experience developing, maintaining, and improving applications/websites. Proven ability to design, develop, and test scalable and reliable software. With expertise in frontend and backend development along with cloud computing.
-
-        <div style={{ fontSize: "3rem" }}></div>
+        Software engineer with 4+ years of experience developing, maintaining, and improving applications/websites. Proven ability to design, develop, and test scalable and reliable software. With expertise in frontend and backend development along with cloud computing.
+        <br></br>
         <br></br>
         <div
         style={{

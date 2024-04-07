@@ -151,7 +151,7 @@ const Projects = () => {
       }} 
       className="p-5"
     >
-      <h1 className="text-3xl font-bold">Projects</h1>
+      <h1 className="text-3xl font-bold pt-3">Projects</h1>
 
       {dataProject.projects.map((data) => (
         <div
