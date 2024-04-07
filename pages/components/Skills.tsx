@@ -230,7 +230,7 @@ const Skills = () => {
         gap: "30px",
         padding: "20px",
         paddingTop: "50px",
-        paddingBottom: "90px"
+        paddingBottom: "20px", 
       }}
     >
       <h1 className="text-3xl font-bold">Skills</h1>
@@ -241,7 +241,7 @@ const Skills = () => {
           <div
             key={e}
             id={e}
-            className="animation-fade w-full shadow-2xl"
+            className="animation-fade w-full shadow-lg"
             style={{ display: "flex", gap: "10px", backgroundColor: "white", padding: "25px", borderRadius: "5px" }}
           >
               <div>

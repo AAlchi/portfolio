@@ -147,7 +147,7 @@ const Projects = () => {
         backgroundColor: "#DBD9E4",
         display: "flex",
         flexDirection: "column",
-        gap: "30px", 
+        gap: "30px" 
       }} 
       className="p-5"
     >
@@ -156,7 +156,7 @@ const Projects = () => {
       {dataProject.projects.map((data) => (
         <div
           key={data.name}
-          className={`w-full shadow-2xl flex-col justify-between bg-white p-10`}
+          className={`w-full shadow-lg flex-col justify-between bg-white p-10`}
           style={{ borderRadius: "5px" }}
         >
           <div className="flex justify-between gap-7">

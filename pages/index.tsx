@@ -33,7 +33,7 @@ export default function Home() {
       <div style={{ display: "flex", flexDirection: "column", gap: "5px" }}>
         <Header />
         <Main />  
-
+    <div className="flex flex-col">
           <div id="skills" ref={ref} className={`${isVisible ? "animate" : ""}`} style={{opacity: 0}}>
             <Skills />
           </div>
@@ -49,7 +49,7 @@ export default function Home() {
             <Footer /> 
           </div>
         </div> 
-
+        </div>
     </div>
   );
 }
