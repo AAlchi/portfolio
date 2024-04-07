@@ -1,7 +1,7 @@
 {
   "hosting": {  
     "site": "alialchi",
-    "public": "aliai",
+    "public": "out",
     "ignore": [
       "firebase.json",
       "**/.*",

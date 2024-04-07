@@ -10,7 +10,7 @@ const Quote = () => {
       }}
       className="flex flex-col p-5"
     >
-      <h1 className="text-3xl font-bold pt-3">About</h1>
+      <h1 className="text-3xl font-bold">About</h1>
 
       <h1
         style={{ 

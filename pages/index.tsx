@@ -37,17 +37,14 @@ export default function Home() {
           <div id="skills" ref={ref} className={`${isVisible ? "animate" : ""}`} style={{opacity: 0}}>
             <Skills />
           </div>
-        <div className="absolute w-full" style={{border: "2px solid white"}}/>
 
           <div id="projects" ref={ref2} className={`${isVisible2 ? "animate" : ""}`} style={{opacity: 0}}>
             <Projects />
           </div>
-        <div className="absolute w-full" style={{border: "2px solid white"}}/>
 
           <div id="resume"> 
             <Quote />
           </div>
-        <div className="absolute w-full" style={{border: "2px solid white"}}/>
           <div id="contact">
             <Footer /> 
           </div>
