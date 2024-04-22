@@ -1,4 +1,6 @@
-import Image from "next/image";
+import Image from "next/image"; 
+import {motion} from "framer-motion"
+import { useInView } from "react-intersection-observer";
 
 interface skillsInterface {
   _id: string;
@@ -221,6 +223,11 @@ const Skills = () => {
     }
   }
 
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0,
+  });
+
   return (
     <div
       style={{
@@ -238,7 +245,11 @@ const Skills = () => {
       <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-5">
 
         {[...Array(4)].map((e, i) => (
-          <div
+          <motion.div
+            ref={ref}
+            initial={{ scale: 0.5 }}
+            animate={{ scale: inView ? 1 : 0 }}
+            transition={{ duration: i == 0 ? 0.5 : i == 1 ? 0.8 : i == 2 ? 1.2 : 1.5, ease: "easeInOut" }}
             key={e}
             id={e}
             className="animation-fade w-full shadow-lg"
@@ -246,7 +257,7 @@ const Skills = () => {
           >
               <div>
                 {i == 0 ? (
-                  <>
+                <> 
                     <h2 className="text-xl"><span className="font-bold">Frontend</span></h2>
                     <br></br>
                     <div className="flex flex-wrap gap-8">
@@ -323,7 +334,7 @@ const Skills = () => {
 
               </div>
 
-            </div>
+            </motion.div>
 
         ))}
 

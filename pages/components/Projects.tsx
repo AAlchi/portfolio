@@ -1,6 +1,8 @@
 import { useState } from "react"; 
 import Image from "next/image";
-import Link from "next/link";
+import Link from "next/link"; 
+import {motion} from "framer-motion"
+import { useInView } from "react-intersection-observer";
 
 interface mainProjectStructure {
   _id: string;
@@ -109,7 +111,10 @@ const Projects = () => {
       return "/imgs/node.png"
     }
   }  
-
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0,
+  }); 
   function setName(name: string, images: string[]) {
     setIsOn(true)
     setNameSet(name)
@@ -150,15 +155,19 @@ const Projects = () => {
         gap: "30px" 
       }} 
       className="p-5"
+      ref={ref}
     >
       <h1 className="text-3xl font-bold">Projects</h1>
 
       {dataProject.projects.map((data) => (
-        <div
-          key={data.name}
+         <motion.div 
+         initial={{ scale: 0}}
+         animate={{ scale: inView ? 1 : 0 }}
+         transition={{ duration: Number(data._id) - 0.5, ease: "easeInOut" }} 
+         key={data.name}
+         id={data._id}
           className={`w-full shadow-lg flex-col justify-between bg-white p-10`}
-          style={{ borderRadius: "5px" }}
-        >
+          style={{ borderRadius: "5px" }}> 
           <div className="flex justify-between gap-7">
           <div
             className="w-3/6 justify-between shouldImageAppearCheck"
@@ -206,7 +215,7 @@ const Projects = () => {
               </svg>
             </div> 
           </div>
-        </div>
+        </motion.div>
       ))}
     </div>
     </>

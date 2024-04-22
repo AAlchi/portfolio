@@ -9,24 +9,6 @@ import { useInView } from "react-intersection-observer";
 import Main from "./components/Main";
 
 export default function Home() {
-  const [isVisible, setIsVisible] = useState(false);
-  const [isVisible2, setIsVisible2] = useState(false); 
-  const { ref, inView } = useInView({
-    triggerOnce: true,  
-    threshold: 0 
-  });
-  const { ref: ref2, inView: inView2 } = useInView({
-    triggerOnce: true,  
-    threshold: 0 
-  });
-  useEffect(() => { 
-    if (inView) {
-      setIsVisible(true);
-    }
-    if (inView2) {
-      setIsVisible2(true);
-    }
-  }, [inView, inView2]);
   return (
     <div style={{ display: "flex", flexDirection: "column" }}> 
     <div id="main"></div> 
@@ -34,11 +16,11 @@ export default function Home() {
         <Header />
         <Main />  
     <div className="flex flex-col">
-          <div id="skills" ref={ref} className={`${isVisible ? "animate" : ""}`} style={{opacity: 0}}>
+          <div id="skills">
             <Skills />
           </div>
 
-          <div id="projects" ref={ref2} className={`${isVisible2 ? "animate" : ""}`} style={{opacity: 0}}>
+          <div id="projects">
             <Projects />
           </div>
 
