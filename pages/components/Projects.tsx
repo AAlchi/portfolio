@@ -19,16 +19,16 @@ const dataProject: { projects: mainProjectStructure[] } = {
       _id: "1",
       name: "HS Social",
       img: [
-        "./imgs/one-one.png",
-        "./imgs/one-two.png",
-        "./imgs/one-three.png",
-        "./imgs/one-four.png",
-        "./imgs/one-five.png",
-        "./imgs/one-six.png",
-        "./imgs/one-seven.png",
-        "./imgs/one-eight.png",
-        "./imgs/one-nine.png",
-        "./imgs/one-ten.png",
+        "./imgs/one/one-one.png",
+        "./imgs/one/one-two.png",
+        "./imgs/one/one-three.png",
+        "./imgs/one/one-four.png",
+        "./imgs/one/one-five.png",
+        "./imgs/one/one-six.png",
+        "./imgs/one/one-seven.png",
+        "./imgs/one/one-eight.png",
+        "./imgs/one/one-nine.png",
+        "./imgs/one/one-ten.png",
       ],
       description:
         "Social media site created with Next Typescript because of a global organization called Hack Club. Built for school Hack Club as the social media platforom to communicate with each other and upload announcements and reminders.",
@@ -39,13 +39,12 @@ const dataProject: { projects: mainProjectStructure[] } = {
       _id: "2",
       name: "MTT Bank",
       img: [
-        "./imgs/two-three.png",
-        "./imgs/two-four.png",
-        "./imgs/two-six.png",
-        "./imgs/two-five.png",
-
-        "./imgs/two-one.png",
-        "./imgs/two-two.png", 
+        "./imgs/two/two-three.png",
+        "./imgs/two/two-four.png",
+        "./imgs/two/two-six.png",
+        "./imgs/two/two-five.png", 
+        "./imgs/two/two-one.png",
+        "./imgs/two/two-two.png", 
       ],
       description:
         "Fantasy banking website coded with HTML, CSS, and PHP made for people to learn how banks work and prepare you for real life.",
@@ -56,9 +55,9 @@ const dataProject: { projects: mainProjectStructure[] } = {
       _id: "3",
       name: "MTT Chat",
       img: [
-        "./imgs/three-one.png",
-        "./imgs/three-two.png",
-        "./imgs/three-three.png",
+        "./imgs/three/three-one.png",
+        "./imgs/three/three-two.png",
+        "./imgs/three/three-three.png",
       ],
       description:
         "Website coded in MERN used to chat with your friends. You can send texts, along with images, and add friends.",
@@ -70,8 +69,8 @@ const dataProject: { projects: mainProjectStructure[] } = {
         _id: "5",
         name: "Music from Spotify",
         img: [
-          "./imgs/five-one.png",
-          "./imgs/five-two.png", 
+          "./imgs/five/five-one.png",
+          "./imgs/five/five-two.png", 
         ],
         description:
           "Using Spotify's API, this fetches the data associated with your account and displays it. This includes playlists, music, and your username.",
@@ -138,7 +137,7 @@ const Projects = () => {
       <div style={{overflowY: "auto"}}>
            {imagesPopup.map(img => (
             <>
-                <Image width={100} height={100} src={img} alt="image" className='w-full' style={{border: "4px solid lightgray"}}/>  
+                <Image width={100} height={100} src={img} alt="image" className='w-full' />  
                 <br></br>
                 </>
            ))}  
@@ -192,7 +191,6 @@ const Projects = () => {
                 <Image 
                   width={100} height={100}
                   className="grid gap-4 w-full"
-                  style={{ border: "2px solid black", borderRadius: "5px" }}
                   src={data.img[0]}
                   alt="projectName"
                 />  

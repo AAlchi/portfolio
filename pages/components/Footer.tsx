@@ -18,7 +18,7 @@ const Footer = () => {
         <h2 className="font-bold text-lg">You can reach me at</h2>
         <ul>
           <li>alialchi07@gmail.com</li>
-          <li>773-799-1224</li>
+          <li>(312)-799-1224</li>
         </ul>
        </div>
     </div>
