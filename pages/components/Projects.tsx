@@ -39,12 +39,10 @@ const dataProject: { projects: mainProjectStructure[] } = {
       _id: "2",
       name: "MTT Bank",
       img: [
-        "./imgs/two/two-three.png",
-        "./imgs/two/two-four.png",
-        "./imgs/two/two-six.png",
-        "./imgs/two/two-five.png", 
         "./imgs/two/two-one.png",
         "./imgs/two/two-two.png", 
+        "./imgs/two/two-three.png",
+        "./imgs/two/two-four.png" 
       ],
       description:
         "Fantasy banking website coded with HTML, CSS, and PHP made for people to learn how banks work and prepare you for real life.",
