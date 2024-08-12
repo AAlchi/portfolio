@@ -2,9 +2,8 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link"; 
 import {motion} from "framer-motion"
-import { useInView } from "react-intersection-observer";
-import Icons from "../global/icons/Icons"; 
-import dataProject from "../global/projects/Projects";
+import { useInView } from "react-intersection-observer";   
+import data from "../global/data/data";
 
 const Projects = () => { 
   const { ref, inView } = useInView({
@@ -19,24 +18,26 @@ const Projects = () => {
   const [isOn, setIsOn] = useState(false)
   const [nameSet, setNameSet] = useState("")
   const [imagesPopup, setImagesPopup] = useState([])
+
+  const { projects, icons } = data()
   return (
-    <>  
+    <div>  
     {isOn && (
        <div id="popup" className='fixed top-0 left-0 w-full h-full flex justify-center items-center bg-gray-800 bg-opacity-50' style={{left: "50%", transform: "translateX(-50%)"}}>
        <div className='flex flex-col w-full md:w-3/5 lg:w-3/5 bg-slate-100 mt-20 p-5 rounded' style={{height: "85vh", overflowY: "hidden"}}>
              <div className='flex items-center justify-between'>
                  <h1 className='text-3xl mt-2 font-bold'>{nameSet}</h1>
-                 <svg xmlns="http://www.w3.org/2000/svg" onClick={() => setIsOn(false)} fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6 cursor-pointer">
-                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                 <svg xmlns="http://www.w3.org/2000/svg" onClick={() => setIsOn(false)} fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6 cursor-pointer">
+                     <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
                  </svg>
              </div>  
       <br></br>
       <div style={{overflowY: "auto"}}>
            {imagesPopup.map(img => (
-            <>
-                <Image width={100} height={100} src={img} alt="image" className='w-full' />  
-                <br></br>
-                </>
+             <div key={img}>
+               <Image width={100} height={100} src={img} alt="image" className='w-full' />
+               <br></br>
+             </div>
            ))}  
 </div>
       </div>
@@ -55,7 +56,7 @@ const Projects = () => {
     >
       <h1 className="text-3xl font-bold">Projects</h1>
 
-      {dataProject.projects.map((data) => (
+      {projects.projects.map((data) => (
          <motion.div 
          initial={{ scale: 0}}
          animate={{ scale: inView ? 1 : 0 }}
@@ -76,7 +77,7 @@ const Projects = () => {
               <ul style={{ display: "flex", flexDirection: "row", marginTop: "10px", gap: "25px", flexWrap: "wrap", fontWeight: "bold" }}>
                 {data.languages.map((first, index) => (
                   <div key={first} className="flex items-center gap-2 pl-2 pr-2">
-                    <Image width={100} height={100} alt="image" style={{ width: "30px", height: "30px", borderRadius: "5px" }} src={Icons(first)!}/>
+                    <Image width={100} height={100} alt="image" style={{ width: "30px", height: "30px", borderRadius: "5px" }} src={icons(first)!}/>
                     <li key={index}>{first}</li>
                   </div>
                 ))}
@@ -89,8 +90,7 @@ const Projects = () => {
                   width={100} height={100}
                   className="grid gap-4 w-full"
                   src={data.img[0]}
-                  alt="projectName"
-                  priority
+                  alt="projectName" 
                 />  
             </div>
           </div> 
@@ -99,22 +99,22 @@ const Projects = () => {
             <div>
               <Link className="flex gap-2 text-xl items-center cursor-pointer text-sm md:text-md lg:text-lg" href={data.github}>
                 View GitHub Repo 
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
                 </svg>
               </Link>
             </div>
             <div className="flex gap-2 text-xl items-center cursor-pointer text-sm md:text-md lg:text-lg" onClick={() => setName(data.name, data.img)}>
               View Project 
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
               </svg>
             </div> 
           </div>
         </motion.div>
       ))}
     </div>
-    </>
+    </div>
   );
 };
 
