@@ -3,111 +3,10 @@ import Image from "next/image";
 import Link from "next/link"; 
 import {motion} from "framer-motion"
 import { useInView } from "react-intersection-observer";
+import Icons from "../global/icons/Icons"; 
+import dataProject from "../global/projects/Projects";
 
-interface mainProjectStructure {
-  _id: string;
-  name: string;
-  img: string[];
-  description: string;
-  languages: string[]
-  github: string
-}
-
-const dataProject: { projects: mainProjectStructure[] } = {
-  projects: [
-    {
-      _id: "1",
-      name: "HS Social",
-      img: [
-        "./imgs/one/one-one.png",
-        "./imgs/one/one-two.png",
-        "./imgs/one/one-three.png",
-        "./imgs/one/one-four.png",
-        "./imgs/one/one-five.png",
-        "./imgs/one/one-six.png",
-        "./imgs/one/one-seven.png",
-        "./imgs/one/one-eight.png",
-        "./imgs/one/one-nine.png",
-        "./imgs/one/one-ten.png",
-      ],
-      description:
-        "Social media site created with Next Typescript because of a global organization called Hack Club. Built for school Hack Club as the social media platforom to communicate with each other and upload announcements and reminders.",
-      languages: ["NextJS", "TypeScript", "CSS", "Tailwind", "MongoDB", "Firebase", "Prisma"],
-      github: "https://github.com/AAlchi/HSSocial"
-      },
-    {
-      _id: "2",
-      name: "MTT Bank",
-      img: [
-        "./imgs/two/two-one.png",
-        "./imgs/two/two-two.png", 
-        "./imgs/two/two-three.png",
-        "./imgs/two/two-four.png" 
-      ],
-      description:
-        "Fantasy banking website coded with HTML, CSS, and PHP made for people to learn how banks work and prepare you for real life.",
-      languages: ["HTML", "CSS", "PHP", "MongoDB"],
-      github: "https://github.com/AAlchi/mttbank"
-    },
-    {
-      _id: "3",
-      name: "MTT Chat",
-      img: [
-        "./imgs/three/three-one.png",
-        "./imgs/three/three-two.png",
-        "./imgs/three/three-three.png",
-      ],
-      description:
-        "Website coded in MERN used to chat with your friends. You can send texts, along with images, and add friends.",
-        languages: ["ReactJS", "NodeJS", "CSS", "JavaScript", "MongoDB", "Firebase"],
-        github: "https://github.com/AAlchi/mttChat"
-
-    }, 
-      {
-        _id: "5",
-        name: "Music from Spotify",
-        img: [
-          "./imgs/five/five-one.png",
-          "./imgs/five/five-two.png", 
-        ],
-        description:
-          "Using Spotify's API, this fetches the data associated with your account and displays it. This includes playlists, music, and your username.",
-        languages: ["NextJS", "TypeScript", "Tailwind", "CSS", "SpotifyAPI"],
-        github: "https://github.com/AAlchi/Music"
-        }, 
-  ],
-};
-
-const Projects = () => {
-  const languageImage = (arg: string) => {
-    if (arg == "JavaScript") {
-      return "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
-    } else if (arg == "TypeScript") {
-      return "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
-    } else if (arg == "PHP") {
-      return "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"
-    } else if (arg == "HTML") {
-      return "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
-    } else if (arg == "CSS") {
-      return "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
-    } else if (arg == "MongoDB") {
-      return "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg"
-    } else if (arg == "ReactJS") {
-      return "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
-    } else if (arg == "NextJS") {
-      return "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg"
-    } else if (arg == "Tailwind") {
-      return "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
-    } else if (arg == "Firebase") {
-      return "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg"
-    } else if (arg == "Prisma") {
-      return "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prisma/prisma-original.svg"
-    } else if (arg == "SpotifyAPI") {
-      return "/imgs/spotify.jpg"
-    } else if (arg == "NodeJS") {
-      return "/imgs/node.png"
-    }
-  }  
+const Projects = () => { 
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0,
@@ -177,7 +76,7 @@ const Projects = () => {
               <ul style={{ display: "flex", flexDirection: "row", marginTop: "10px", gap: "25px", flexWrap: "wrap", fontWeight: "bold" }}>
                 {data.languages.map((first, index) => (
                   <div key={first} className="flex items-center gap-2 pl-2 pr-2">
-                    <Image width={100} height={100} alt="image" style={{ width: "30px", height: "30px", borderRadius: "5px" }} src={languageImage(first)!}/>
+                    <Image width={100} height={100} alt="image" style={{ width: "30px", height: "30px", borderRadius: "5px" }} src={Icons(first)!}/>
                     <li key={index}>{first}</li>
                   </div>
                 ))}
@@ -191,6 +90,7 @@ const Projects = () => {
                   className="grid gap-4 w-full"
                   src={data.img[0]}
                   alt="projectName"
+                  priority
                 />  
             </div>
           </div> 

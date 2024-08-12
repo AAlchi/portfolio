@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import {motion} from "framer-motion"
 import { useInView } from "react-intersection-observer";
  
-const Main = () => {
+const Landing = () => {
 
   const [scrollPosition, setScrollPosition] = useState(0);
   const { ref, inView } = useInView({
@@ -51,4 +51,4 @@ const Main = () => {
   );
 };
 
-export default Main
+export default Landing
