@@ -1,5 +1,6 @@
 interface mainProjectStructure {
     _id: string;
+    phone?: boolean;
     name: string;
     img: string[];
     description: string;
@@ -102,6 +103,25 @@ const data = () => {
         projects: [
             {
                 _id: "1",
+                name: "ZoneMaze",
+                img: [
+                    "./imgs/zonemaze/z-0.png", 
+                    "./imgs/zonemaze/z-1.png", 
+                    "./imgs/zonemaze/z-2.png", 
+                    "./imgs/zonemaze/z-3.png", 
+                    "./imgs/zonemaze/z-4.png", 
+                    "./imgs/zonemaze/z-5.png", 
+                    "./imgs/zonemaze/z-6.png", 
+                    "./imgs/zonemaze/z-7.png", 
+                ],
+                phone: true,
+                description:
+                    "Social media site created with Next Typescript because of a global organization called Hack Club. Built for school Hack Club as the social media platforom to communicate with each other and upload announcements and reminders.",
+                languages: ["NextJS", "TypeScript", "CSS", "TailwindCSS", "MongoDB", "Firebase", "Prisma"],
+                github: "https://github.com/AAlchi/ZoneMaze"
+            },
+            {
+                _id: "2",
                 name: "HS Social",
                 img: [
                     "./imgs/one/one-one.png",
@@ -121,7 +141,7 @@ const data = () => {
                 github: "https://github.com/AAlchi/HSSocial"
             },
             {
-                _id: "2",
+                _id: "3",
                 name: "MTT Bank",
                 img: [
                     "./imgs/two/two-one.png",
@@ -135,7 +155,7 @@ const data = () => {
                 github: "https://github.com/AAlchi/mttbank"
             },
             {
-                _id: "3",
+                _id: "4",
                 name: "MTT Chat",
                 img: [
                     "./imgs/three/three-one.png",

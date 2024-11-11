@@ -23,7 +23,7 @@ const Projects = () => {
   return (
     <div>  
     {isOn && (
-       <div id="popup" className='fixed top-0 left-0 w-full h-full flex justify-center items-center bg-gray-800 bg-opacity-50' style={{left: "50%", transform: "translateX(-50%)"}}>
+       <div id="popup" className='fixed px-2 top-0 left-0 w-full h-full flex justify-center items-center bg-gray-800 bg-opacity-50' style={{left: "50%", transform: "translateX(-50%)"}}>
        <div className='flex flex-col w-full md:w-3/5 lg:w-3/5 bg-slate-100 mt-20 p-5 rounded' style={{height: "85vh", overflowY: "hidden"}}>
              <div className='flex items-center justify-between'>
                  <h1 className='text-3xl mt-2 font-bold'>{nameSet}</h1>
@@ -32,10 +32,10 @@ const Projects = () => {
                  </svg>
              </div>  
       <br></br>
-      <div style={{overflowY: "auto"}}>
+      <div style={{overflowY: "auto"}} className="flex w-full flex-wrap justify-evenly">
            {imagesPopup.map(img => (
              <div key={img}>
-               <Image width={100} height={100} src={img} alt="image" className='w-full' />
+               <Image width={100} height={100} src={img} alt="image" style={{maxHeight: "70vh", width: "auto"}} />
                <br></br>
              </div>
            ))}  
@@ -84,20 +84,30 @@ const Projects = () => {
               </ul>
             </div> 
           </div>
-          <div className="w-2/5 shouldImageAppear">
-            <div className="gap-4 flex flex-col items-end justify-between"> 
+          <div className="w-3/6 shouldImageAppear">
+            <div className="flex justify-evenly flex-wrap"> 
                 <Image 
                   width={100} height={100}
                   className="grid gap-4 w-full"
+                  style={{maxHeight: "85vh", width: "auto"}}
                   src={data.img[0]}
                   alt="projectName" 
                 />  
+                {data.phone && (
+                  <Image 
+                  width={100} height={100}
+                  className="grid gap-4 w-full"
+                  style={{maxHeight: "85vh", width: "auto"}}
+                  src={data.img[1]}
+                  alt="projectName" 
+                />  
+                )}
             </div>
           </div> 
         </div>
         <div className="flex flex-wrap w-full justify-between items-center mt-5 gap-1 md:g-0 lg:g-0">
             <div>
-              <Link className="flex gap-2 text-xl items-center cursor-pointer text-sm md:text-md lg:text-lg" href={data.github}>
+              <Link className="flex gap-2 text-xl items-center cursor-pointer text-sm md:text-md lg:text-lg" href={data.github} target="_blank"> 
                 View GitHub Repo 
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
