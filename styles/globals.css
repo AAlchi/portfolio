@@ -109,6 +109,10 @@ button:hover {
   opacity: 80%;
 }
 
+.shouldImageAppearNext {
+  display: block;
+}
+
 @media (max-width: 1000px) {
   .shouldImageAppear {
     display: none
@@ -116,5 +120,11 @@ button:hover {
 
   .shouldImageAppearCheck {
     width: 100%
+  }
+}
+
+@media (max-width: 1560px) {
+  .shouldImageAppearNext {
+    display: none;
   }
 }

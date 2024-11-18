@@ -93,6 +93,7 @@ const Projects = () => {
                   src={data.img[0]}
                   alt="projectName" 
                 />  
+                <div className="shouldImageAppearNext">
                 {data.phone && (
                   <Image 
                   width={100} height={100}
@@ -102,6 +103,7 @@ const Projects = () => {
                   alt="projectName" 
                 />  
                 )}
+                </div>
             </div>
           </div> 
         </div>
