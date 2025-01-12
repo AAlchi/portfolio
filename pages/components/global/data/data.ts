@@ -116,7 +116,7 @@ const data = () => {
                 ],
                 phone: true,
                 description:
-                    "Social media site created with Next Typescript because of a global organization called Hack Club. Built for school Hack Club as the social media platforom to communicate with each other and upload announcements and reminders.",
+                    "ZoneMaze is an app built for ADHD, where users are able to organize their lives, get emotional support, and more.",
                 languages: ["Swift", "Firebase"],
                 github: "https://github.com/AAlchi/ZoneMaze"
             },
