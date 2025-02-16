@@ -30,17 +30,12 @@ const Header = () => {
   }, [])
 
   return (
-    <div className={`${scrollSet ? "sticky" : "absolute"} w-full`} style={{top: "0", zIndex: "9"}}>
+    <div className={`fixed w-full text-white`} style={{top: "0px", zIndex: "9"}}>
        <header 
         id="header"
-        className="flex flex-wrap gap-3 items-center justify-between p-6 text-white font-bold"
-        style={{
-          top: "0",
-          backgroundColor: "rgb(0, 0, 0, 0.7)",
-          opacity: `${scrollSet ? 0.9 : 1}`
-        }}
+        className="flex flex-wrap gap-3 bg-black opacity-65 items-center justify-between p-6 font-bold "
       >
-        <h2 className="text-white text-2xl" style={{ opacity: "1" }}>
+        <h2 className="text-2xl" style={{ opacity: "1" }}>
           Ali A. Ibrahim
         </h2>
         <ul

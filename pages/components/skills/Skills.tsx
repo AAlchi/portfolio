@@ -13,31 +13,17 @@ const Skills = () => {
   const { skills, icons } = data()
 
   return (
-    <div
-      style={{
-        backgroundColor: "#DBD9E4",
-        display: "flex",
-        flexDirection: "column",
-        gap: "30px",
-        padding: "20px",
-        paddingTop: "50px",
-        paddingBottom: "20px",
-      }}
+    <div 
+      className="bg-[#DBD9E4] flex flex-col gap-6 px-5 sm:px-10 pt-10"
     >
       <h1 className="text-3xl font-bold">Skills</h1>
 
       <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-5">
 
         {[...Array(4)].map((e, i) => (
-          <motion.div
-            ref={ref}
-            initial={{ scale: 0.5 }}
-            animate={{ scale: inView ? 1 : 0 }}
-            transition={{ duration: i == 0 ? 0.5 : i == 1 ? 0.8 : i == 2 ? 1.2 : 1.5, ease: "easeInOut" }}
-            key={i}
-            id={e}
-            className="animation-fade w-full shadow-lg"
-            style={{ display: "flex", gap: "10px", backgroundColor: "white", padding: "25px", borderRadius: "5px" }}
+          <div 
+          className="animation-fade w-full shadow-lg flex gap-2 bg-white p-5 rounded-lg py-7" 
+
           >
             <div>
               {i == 0 ? (
@@ -118,7 +104,7 @@ const Skills = () => {
 
             </div>
 
-          </motion.div>
+          </div>
 
         ))}
 

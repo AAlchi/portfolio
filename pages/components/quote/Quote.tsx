@@ -3,12 +3,7 @@ import Link from "next/link";
 const Quote = () => { 
   return (
     <div
-      id="resume"
-      style={{
-        backgroundColor: "#DBD9E4",  
-        gap: "30px", 
-      }}
-      className="flex flex-col p-5"
+      className="bg-[#DBD9E4] flex flex-col gap-6 px-5 sm:px-10 pb-10"
     >
       <h1 className="text-3xl font-bold">About</h1>
 
