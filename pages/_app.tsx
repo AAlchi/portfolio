@@ -8,7 +8,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
   useEffect(() => {
     setClient(true)
-  })
+  }, [])
   return (
     client ? (<Component {...pageProps} />) : (
       <div className="flex items-center h-screen justify-center">

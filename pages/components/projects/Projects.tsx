@@ -51,7 +51,7 @@ const Projects = () => {
         <h1 className="text-3xl font-bold">Projects</h1>
 
         {projects.projects.map((data) => (
-          <div className="w-full py-1">
+          <div className="w-full py-1" key={data._id}>
             <div className="flex justify-between gap-7">
               <div
                 className="animation-fade w-full shadow-lg flex gap-2 bg-white p-5 rounded-lg" 

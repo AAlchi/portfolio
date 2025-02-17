@@ -23,7 +23,7 @@ const Skills = () => {
         {[...Array(4)].map((e, i) => (
           <div 
           className="animation-fade w-full shadow-lg flex gap-2 bg-white p-5 rounded-lg py-7" 
-
+          key={i}
           >
             <div>
               {i == 0 ? (
