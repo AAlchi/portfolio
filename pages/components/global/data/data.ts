@@ -93,7 +93,8 @@ const data = () => {
             "VSCode": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg",
             "XCode": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/xcode/xcode-original.svg",
             "PyCharm": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pycharm/pycharm-original.svg",
-            "Chakra UI": "https://www.vectorlogo.zone/logos/chakra-ui/chakra-ui-icon.svg"
+            "Chakra UI": "https://www.vectorlogo.zone/logos/chakra-ui/chakra-ui-icon.svg",
+            "Supabase": "https://img.icons8.com/?size=48&id=grZaE9tjqDyr&format=png"
         }
 
         return iconDict[arg] || "Not Found"
@@ -137,7 +138,7 @@ const data = () => {
                 ],
                 description:
                     "Social media site created with Next Typescript because of a global organization called Hack Club. Built for school Hack Club as the social media platforom to communicate with each other and upload announcements and reminders.",
-                languages: ["NextJS", "TypeScript", "CSS", "TailwindCSS", "MongoDB", "Firebase", "Prisma"],
+                languages: ["NextJS", "TypeScript", "CSS", "TailwindCSS", "Supabase", "Prisma"],
                 github: "https://github.com/AAlchi/HSSocial"
             },
             {
@@ -154,20 +155,20 @@ const data = () => {
                 languages: ["NextJS", "TailwindCSS", "Chakra UI", "MongoDB", "Prisma", "CSS"],
                 github: "https://github.com/AAlchi/mttbank"
             },
-            {
-                _id: "4",
-                name: "MTT Chat",
-                img: [
-                    "./imgs/three/three-one.png",
-                    "./imgs/three/three-two.png",
-                    "./imgs/three/three-three.png",
-                ],
-                description:
-                    "Website coded in MERN used to chat with your friends. You can send texts, along with images, and add friends.",
-                languages: ["ReactJS", "NodeJS", "CSS", "JavaScript", "MongoDB", "Firebase"],
-                github: "https://github.com/AAlchi/mttChat"
+            // {
+            //     _id: "4",
+            //     name: "MTT Chat",
+            //     img: [
+            //         "./imgs/three/three-one.png",
+            //         "./imgs/three/three-two.png",
+            //         "./imgs/three/three-three.png",
+            //     ],
+            //     description:
+            //         "Website coded in MERN used to chat with your friends. You can send texts, along with images, and add friends.",
+            //     languages: ["ReactJS", "NodeJS", "CSS", "JavaScript", "MongoDB", "Firebase"],
+            //     github: "https://github.com/AAlchi/mttChat"
 
-            },
+            // },
             {
                 _id: "5",
                 name: "Music from Spotify",
