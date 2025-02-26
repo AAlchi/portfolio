@@ -131,10 +131,7 @@ const data = () => {
                     "./imgs/one/one-four.png",
                     "./imgs/one/one-five.png",
                     "./imgs/one/one-six.png",
-                    "./imgs/one/one-seven.png",
-                    "./imgs/one/one-eight.png",
-                    "./imgs/one/one-nine.png",
-                    "./imgs/one/one-ten.png",
+                    "./imgs/one/one-seven.png"
                 ],
                 description:
                     "Social media site created with Next Typescript because of a global organization called Hack Club. Built for school Hack Club as the social media platforom to communicate with each other and upload announcements and reminders.",
