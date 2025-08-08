@@ -14,50 +14,29 @@ interface skillsInterface {
 }
 
 const data = () => {
-    const skills: { frontend: skillsInterface[], backend: skillsInterface[], ds: skillsInterface[], os: skillsInterface[] } = {
-        frontend: [
-            { _id: "1", name: "HTML" },
-            { _id: "2", name: "CSS" },
-            { _id: "3", name: "JavaScript" },
-            { _id: "4", name: "TypeScript" },
-            { _id: "5", name: "CSS" },
-            { _id: "6", name: "Swift" },
-            { _id: "7", name: "Vite", },
-            { _id: "8", name: "NextJS" },
-            { _id: "9", name: "NextTS" },
-            { _id: "10", name: "ReactJS" },
-            { _id: "11", name: "ReactTS" },
-            { _id: "12", name: "JSON" },
-            { _id: "13", name: "TailwindCSS" },
-            { _id: "14", name: "Chakra UI" }
-        ],
-        backend: [
-            { _id: "1", name: "PHP" },
-            { _id: "2", name: "Python" },
-            { _id: "3", name: "NodeJS" },
-            { _id: "4", name: "Express" },
-            { _id: "5", name: "MongoDB" },
-            { _id: "6", name: "Firebase" },
-            { _id: "7", name: "phpMyAdmin" },
-            { _id: "8", name: "mySql" },
-            { _id: "9", name: "Vercel" },
-            { _id: "8", name: "Tensorflow" },
-        ],
-        ds: [
-            { _id: "1", name: "GitHub" },
-            { _id: "2", name: "Trello" },
-            { _id: "3", name: "Postman" },
-            { _id: "4", name: "RapidAPI" },
-            { _id: "5", name: "DevTools" },
-            { _id: "8", name: "VSCode" },
-            { _id: "8", name: "XCode" },
-            { _id: "8", name: "PyCharm" },
-        ],
-        os: [
+    const skills: { techSkills: skillsInterface[], coreSkills: skillsInterface[] } = {
+        coreSkills: [
             { _id: "1", name: "Productivity" },
             { _id: "2", name: "Time Management" },
             { _id: "3", name: "Collaboration" }
         ],
+        techSkills: [
+            { _id: "1", name: "TypeScript" },
+            { _id: "2", name: "JavaScript" },
+            { _id: "3", name: "CSS" },
+            { _id: "4", name: "HTML" },
+            { _id: "5", name: "React" },
+            { _id: "5", name: "Next.js" },
+            { _id: "5", name: "TailwindCSS" },
+            { _id: "5", name: "Node.js" },
+            { _id: "5", name: "Python" },
+            { _id: "5", name: "PHP" },
+            { _id: "5", name: "MongoDB" },
+            { _id: "5", name: "Firebase" },
+            { _id: "5", name: "Swift" },
+            { _id: "5", name: "GitHub" },
+            { _id: "5", name: "DevTools" },
+        ]
     };
     const icons = (arg: string) => {
         const iconDict: { [key: string]: string } = {
@@ -67,8 +46,8 @@ const data = () => {
             "HTML": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
             "CSS": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg",
             "MongoDB": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg",
-            "ReactJS": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
-            "NextJS": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg",
+            "React": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+            "Next.js": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg",
             "TailwindCSS": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
             "Firebase": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg",
             "Prisma": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prisma/prisma-original.svg",
@@ -82,6 +61,7 @@ const data = () => {
             "Python": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
             "Express": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg",
             "phpMyAdmin": "/imgs/icons/phpMyAdmin.png",
+            "Node.js": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
             "mySql": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg",
             "Vercel": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg",
             "Tensorflow": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg",
@@ -123,6 +103,21 @@ const data = () => {
             },
             {
                 _id: "2",
+                name: "BrewED",
+                img: [
+                    "./imgs/ten/ten-one.png",
+                    "./imgs/ten/ten-two.png",
+                    "./imgs/ten/ten-three.png",
+                    "./imgs/ten/ten-four.png",
+                    "./imgs/ten/ten-five.png"
+                ],
+                description:
+                    "An educational tool for vocational students, focusing on interactive exercises and accessible design.",
+                languages: ["Swift", "Firebase"],
+                github: "https://github.com/AAlchi/D214Trainer"
+            },
+            {
+                _id: "3",
                 name: "HS Social",
                 img: [
                     "./imgs/one/one-one.png",
@@ -134,12 +129,12 @@ const data = () => {
                     "./imgs/one/one-seven.png"
                 ],
                 description:
-                    "Social media site created with Next Typescript because of a global organization called Hack Club. Built for school Hack Club as the social media platforom to communicate with each other and upload announcements and reminders.",
-                languages: ["NextJS", "TypeScript", "CSS", "TailwindCSS", "Supabase", "Prisma"],
+                    "A social platform for school club members to improve communication and foster community engagement.",
+                languages: ["Next.js", "TypeScript", "CSS", "TailwindCSS", "Supabase", "Prisma"],
                 github: "https://github.com/AAlchi/HSSocial"
             },
             {
-                _id: "3",
+                _id: "4",
                 name: "MTT Bank",
                 img: [
                     "./imgs/two/two-one.png",
@@ -149,7 +144,7 @@ const data = () => {
                 ],
                 description:
                     "Fantasy banking website for people to learn how banks work and prepare you for real life.",
-                languages: ["NextJS", "TailwindCSS", "Chakra UI", "MongoDB", "Prisma", "CSS"],
+                languages: ["Next.js", "TailwindCSS", "Chakra UI", "MongoDB", "Prisma", "CSS"],
                 github: "https://github.com/AAlchi/mttbank"
             },
             // {
@@ -175,7 +170,7 @@ const data = () => {
                 ],
                 description:
                     "Using Spotify's API, this fetches the data associated with your account and displays it. This includes playlists, music, and your username.",
-                languages: ["NextJS", "TypeScript", "TailwindCSS", "CSS", "SpotifyAPI"],
+                languages: ["Next.js", "TypeScript", "TailwindCSS", "CSS", "SpotifyAPI"],
                 github: "https://github.com/AAlchi/Music"
             },
         ],

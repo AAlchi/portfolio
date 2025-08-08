@@ -20,7 +20,7 @@ const Skills = () => {
 
       <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-5">
 
-        {[...Array(4)].map((e, i) => (
+        {[...Array(2)].map((e, i) => (
           <div 
           className="animation-fade w-full shadow-lg flex gap-2 bg-white p-5 rounded-lg py-7" 
           key={i}
@@ -28,56 +28,11 @@ const Skills = () => {
             <div>
               {i == 0 ? (
                 <div key={i}>
-                  <h2 className="text-xl"><span className="font-bold">Frontend</span></h2>
+                  <h2 className="text-xl"><span className="font-bold">Core Skills</span></h2>
                   <br></br>
                   <div className="flex flex-wrap gap-8">
                     {
-                      skills.frontend.map((data) => (
-                        <div key={data.name} className="flex gap-1">
-                          <Image width={100} height={100} alt="image" style={{ width: "30px", height: "30px", borderRadius: "5px" }} src={icons(data.name)!} />
-                          <br></br>
-                          <h2 className="text-xl"><span>{data.name}</span></h2>
-                        </div>
-                      ))}
-                  </div>
-                </div>
-              ) : i == 1 ? (
-                <div key={i}>
-                  <h2 className="text-xl"><span className="font-bold">Backend</span></h2>
-                  <br></br>
-                  <div className="flex flex-wrap gap-8">
-                    {
-                      skills.backend.map((data: any) => (
-                        <div key={data._id} className="flex gap-1">
-                          <Image width={100} height={100} alt="image" style={{ width: "30px", height: "30px", borderRadius: "5px" }} src={icons(data.name)!} />
-                          <br></br>
-                          <h2 className="text-xl"><span>{data.name}</span></h2>
-                        </div>
-                      ))}
-                  </div>
-                </div>
-              ) : i == 2 ? (
-                <div key={i}>
-                  <h2 className="text-xl"><span className="font-bold">Developer Skills</span></h2>
-                  <br></br>
-                  <div className="flex flex-wrap gap-8">
-                    {
-                      skills.ds.map((data: any) => (
-                        <div key={data.name} className="flex gap-1">
-                          <Image width={100} height={100} alt="image" style={{ width: "30px", height: "30px", borderRadius: "5px" }} src={icons(data.name)!} />
-                          <br></br>
-                          <h2 className="text-xl"><span>{data.name}</span></h2>
-                        </div>
-                      ))}
-                  </div>
-                </div>
-              ) : (
-                <div key={i}>
-                  <h2 className="text-xl"><span className="font-bold">Other Skills</span></h2>
-                  <br></br>
-                  <div className="flex flex-wrap gap-8">
-                    {
-                      skills.os.map((data: any) => (
+                      skills.coreSkills.map((data: any) => (
                         <div key={data._id} className="flex gap-1">
                           {data.name == "Productivity" && (
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
@@ -96,6 +51,21 @@ const Skills = () => {
                           )}
                           <br></br>
                           <h2 className="text-xl"><div>{data.name}</div></h2>
+                        </div>
+                      ))}
+                  </div>
+                </div>
+              ) : (
+                <div key={i}>
+                  <h2 className="text-xl"><span className="font-bold">Tech Skills</span></h2>
+                  <br></br>
+                  <div className="flex flex-wrap gap-8">
+                    {
+                      skills.techSkills.map((data: any) => (
+                        <div key={data._id} className="flex gap-1">
+                          <Image width={100} height={100} alt="image" style={{ width: "30px", height: "30px", borderRadius: "5px" }} src={icons(data.name)!} />
+                          <br></br>
+                          <h2 className="text-xl"><span>{data.name}</span></h2>
                         </div>
                       ))}
                   </div>

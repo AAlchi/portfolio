@@ -13,7 +13,7 @@ const Quote = () => {
         }}
         className="text-white font-bold bg-black text-center items-center flex flex-col text-lg px-10 pt-10 pb-4"
       >
-        Software engineer with 4+ years of experience developing, maintaining, and improving applications/websites. Proven ability to design, develop, and test scalable and reliable software. With expertise in frontend and backend development along with cloud computing.
+        Aspiring physician passionate about neuroscience and patient care, with experience leveraging technology to support mental wellness.
         <br></br>
         <br></br>
         <div
